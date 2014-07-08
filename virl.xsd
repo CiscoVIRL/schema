@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://www.cisco.com/VIRL" version="0.7"
+<xs:schema targetNamespace="http://www.cisco.com/VIRL" version="0.8"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
 	xmlns:virl="http://www.cisco.com/VIRL">
 
 	<xs:annotation>
 		<xs:documentation>
-			Topology schema for VIRL, v0.7
+			Topology schema for VIRL, v0.8
 			(C) Copyright 2012-2014 Cisco Systems Inc.  All rights reserved.
 		</xs:documentation>
 	</xs:annotation>
@@ -187,6 +187,11 @@
 				<xs:attribute name="vmFlavor" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>This optional parameter may specify the OpenStack's Flavor (a.k.a. profile) to use for this node.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="vmVolume" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>This optional parameter may specify the OpenStack's Volume to use for this node.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 				<xs:attribute name="ipv4" type="virl:ipv4Type"/>
