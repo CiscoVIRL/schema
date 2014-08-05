@@ -1,5 +1,5 @@
 <!DOCTYPE html
-  PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -249,76 +249,83 @@
       <div class="toc">
          <form action="none">
             <div><span> Group by: <select id="selectTOC"
-                          onchange="selectTOCGroupBy(this.options[this.selectedIndex].value, true, 'virl.indexList.html', 'virl.indexListns.html', 'virl.indexListcomp.html');">
+                          onchange="selectTOCGroupBy(this.options[this.selectedIndex].value, true, 'index.indexList.html', 'index.indexListns.html', 'index.indexListcomp.html');">
                      <option value="toc_group_by_namespace">Namespace</option>
-                     <option value="toc_group_by_location">Location</option>
-                     <option value="toc_group_by_component_type" selected="selected">Component Type</option></select></span></div>
+                     <option value="toc_group_by_location" selected="selected">Location</option>
+                     <option value="toc_group_by_component_type">Component Type</option></select></span></div>
          </form>
-         <div class="level1" id="toc_group_by_component_type" style="display:block">
+         <div class="level1" id="toc_group_by_location" style="display:block">
             <div>
-               <div class="horizontalLayout">
-                  <table class="rt">
-                     <tr>
-                        <td class="rt_cornerTopLeft"></td>
-                        <td class="rt_lineTop"></td>
-                        <td class="rt_cornerTopRight"></td>
-                     </tr>
-                     <tr>
-                        <td class="rt_lineLeft"></td>
-                        <td class="rt_content">
-                           <div class="componentGroupTitle">Elements
-                              
-                           </div>
-                           <div id="Element" style="display:block">
-                              <div><b><a href="virl_xsd.html#topology" target="mainFrame"
-                                       title="http://www.cisco.com/VIRL"
-                                       onclick="updatePageTitle('Schema documentation for virl.xsd')">virl:topology</a></b></div>
-                           </div>
-                        </td>
-                        <td class="rt_lineRight"></td>
-                     </tr>
-                     <tr>
-                        <td class="rt_cornerBottomLeft"></td>
-                        <td class="rt_lineBottom"></td>
-                        <td class="rt_cornerBottomRight"></td>
-                     </tr>
-                  </table>
+               <div class="level2">
+                  <p><input id="button_virl.xsd" type="image" value="-" src="img/btM.gif"
+                            onclick="switchState('virl.xsd');"
+                            class="control" /><span class="indexGroupTitle">virl.xsd</span></p>
+                  <div id="virl.xsd" style="display:block">
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <div class="componentGroupTitle">Elements
+                                    
+                                 </div>
+                                 <div id="virl.xsdElement" style="display:block">
+                                    <div><b><a href="virl_xsd.html#topology" target="mainFrame"
+                                             title="http://www.cisco.com/VIRL"
+                                             onclick="updatePageTitle('Schema documentation for virl.xsd')">virl:topology</a></b></div>
+                                 </div>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <div class="componentGroupTitle">Complex Types
+                                    
+                                 </div>
+                                 <div id="virl.xsdComplex_Type" style="display:block">
+                                    <div><b><a href="virl_xsd.html#connectionType" target="mainFrame"
+                                             title="http://www.cisco.com/VIRL"
+                                             onclick="updatePageTitle('Schema documentation for virl.xsd')">virl:connectionType</a></b></div>
+                                    <div><b><a href="virl_xsd.html#extensible" target="mainFrame"
+                                             title="http://www.cisco.com/VIRL"
+                                             onclick="updatePageTitle('Schema documentation for virl.xsd')">virl:extensible</a></b></div>
+                                    <div><b><a href="virl_xsd.html#nodeType" target="mainFrame"
+                                             title="http://www.cisco.com/VIRL"
+                                             onclick="updatePageTitle('Schema documentation for virl.xsd')">virl:nodeType</a></b></div>
+                                 </div>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div style="clear:left"></div>
+                  </div>
                </div>
-               <div class="horizontalLayout">
-                  <table class="rt">
-                     <tr>
-                        <td class="rt_cornerTopLeft"></td>
-                        <td class="rt_lineTop"></td>
-                        <td class="rt_cornerTopRight"></td>
-                     </tr>
-                     <tr>
-                        <td class="rt_lineLeft"></td>
-                        <td class="rt_content">
-                           <div class="componentGroupTitle">Complex Types
-                              
-                           </div>
-                           <div id="Complex_Type" style="display:block">
-                              <div><b><a href="virl_xsd.html#connectionType" target="mainFrame"
-                                       title="http://www.cisco.com/VIRL"
-                                       onclick="updatePageTitle('Schema documentation for virl.xsd')">virl:connectionType</a></b></div>
-                              <div><b><a href="virl_xsd.html#extensible" target="mainFrame"
-                                       title="http://www.cisco.com/VIRL"
-                                       onclick="updatePageTitle('Schema documentation for virl.xsd')">virl:extensible</a></b></div>
-                              <div><b><a href="virl_xsd.html#nodeType" target="mainFrame"
-                                       title="http://www.cisco.com/VIRL"
-                                       onclick="updatePageTitle('Schema documentation for virl.xsd')">virl:nodeType</a></b></div>
-                           </div>
-                        </td>
-                        <td class="rt_lineRight"></td>
-                     </tr>
-                     <tr>
-                        <td class="rt_cornerBottomLeft"></td>
-                        <td class="rt_lineBottom"></td>
-                        <td class="rt_cornerBottomRight"></td>
-                     </tr>
-                  </table>
-               </div>
-               <div style="clear:left"></div>
             </div>
          </div>
       </div>
@@ -326,6 +333,34 @@
          <hr />
          <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
          </div>
-      </div>
-   </body>
+      </div><script type="text/javascript">
+         <!--                     
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                --></script></body>
 </html>
