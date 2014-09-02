@@ -200,6 +200,11 @@
 						<xs:documentation>This optional attribute may specify the IPV6 address for this node.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
+				<xs:attribute name="excludeFromLaunch" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>This optional attribute indicates whether or not this node is to be skipped during the simulation launch.  By default, all nodes in a topology are launched.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
