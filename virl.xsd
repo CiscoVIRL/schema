@@ -16,66 +16,187 @@
 			<xs:complexContent>
 				<xs:extension base="virl:extensible">
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" minOccurs="0" name="node"
-							type="virl:nodeType"/>
-						<xs:element name="connection" type="virl:connectionType" minOccurs="0"
-							maxOccurs="unbounded"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="node">
+							<xs:complexType>
+								<xs:annotation>
+									<xs:documentation>Nodes represent all edge devices on a network, and are the basic building blocks of a topology.  A node may be as simple as an IP Phone, or as complex as a fully stacked CRS1.</xs:documentation>
+								</xs:annotation>
+								<xs:complexContent>
+									<xs:extension base="virl:extensible">
+										<xs:sequence>
+											<xs:element name="module" minOccurs="0" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:complexContent>
+														<xs:extension base="virl:extensible">
+															<xs:sequence>
+																<xs:element name="interface" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:annotation>
+																			<xs:documentation>Nodes of type ROUTER may declare interfaces.  Nodes of type VXR expose their interfaces by declaring ports within the VXR platform complex instead.</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexContent>
+																			<xs:extension base="virl:extensible">
+																				<xs:attribute name="id">
+																					<xs:simpleType>
+																						<xs:annotation>
+																							<xs:documentation>Space separated number. The valid format, such as 0 0 0 2, or 0 1, depends on the parent node's subtype.</xs:documentation>
+																						</xs:annotation>
+																						<xs:restriction base="xs:string">
+																							<xs:pattern value="[0-9]+(\s[0-9]+)*"/>
+																						</xs:restriction>
+																					</xs:simpleType>
+																				</xs:attribute>
+																				<xs:attribute name="name" type="xs:string">
+																					<xs:annotation>
+																						<xs:documentation>Any string.  The valid format, such as GigabitEthernet0/0/0/2, depends on the parent node's subtype. This string will be rendered as a connection endpoint's label decoration in VM Maestro.</xs:documentation>
+																					</xs:annotation>
+																				</xs:attribute>
+																				<xs:attribute name="ipv4" type="virl:ipv4Type">
+																					<xs:annotation>
+																						<xs:documentation>This optional attribute may specify the IPv4 address for this node.</xs:documentation>
+																					</xs:annotation>
+																				</xs:attribute>
+																				<xs:attribute name="ipv6" type="virl:ipv6Type">
+																					<xs:annotation>
+																						<xs:documentation>This optional attribute may specify the IPv6 address for this node.</xs:documentation>
+																					</xs:annotation>
+																				</xs:attribute>
+																				<xs:attribute name="netPrefixLenV4">
+																					<xs:annotation>
+																						<xs:documentation>This optional attribute may specify the IPv4 net prefix length for this node.</xs:documentation>
+																					</xs:annotation>
+																					<xs:simpleType>
+																						<xs:restriction base="xs:integer">
+																							<xs:minInclusive value="1"/>
+																							<xs:maxInclusive value="32"/>
+																						</xs:restriction>
+																					</xs:simpleType>
+																				</xs:attribute>
+																				<xs:attribute name="netPrefixLenV6">
+																					<xs:annotation>
+																						<xs:documentation> This optional attribute may specify the IPv6 net prefix length for this node.</xs:documentation>
+																					</xs:annotation>
+																					<xs:simpleType>
+																						<xs:restriction base="xs:integer">
+																							<xs:minInclusive value="1"/>
+																							<xs:maxInclusive value="128"/>
+																						</xs:restriction>
+																					</xs:simpleType>
+																				</xs:attribute>
+																			</xs:extension>
+																		</xs:complexContent>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:extension>
+													</xs:complexContent>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+										<xs:attribute name="name" type="xs:string" use="required">
+											<xs:annotation>
+												<xs:documentation>Any string, rendered as its label in VM Maestro. It may include special characters (e.g. newline, accents, etc), but must be escape-sequenced.</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="type" default="SIMPLE">
+											<xs:annotation>
+												<xs:documentation>This indicates the node's type, and determines which (if any) schema specific validation rules to enforce on it.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="SIMPLE"/>
+													<xs:enumeration value="ASSET"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:attribute>
+										<xs:attribute name="location" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Specifies the node's x/y location on a canvas, in a comma-separated x,y string.</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="connection" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:annotation>
+									<xs:documentation>
+										Connections define links (physical or not) between any model elements.
+										A connection's endpoints may be nodes, but may also be a model element within a node.
+										For instance, when connecting to a CRS1, it may terminate at a specific port within the platform complex.
+										For bi-direction connections, the target and source elements are interchangeable, but that is up to the actual model's interpretation.
+									</xs:documentation>
+								</xs:annotation>
+								<xs:complexContent>
+									<xs:extension base="virl:extensible">
+										<xs:attribute name="src" use="required" type="xs:string"> </xs:attribute>
+										<xs:attribute name="dst" use="required" type="xs:string"/>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="config" minOccurs="0" maxOccurs="unbounded">
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
 					</xs:sequence>
+					<xs:attribute name="schemaVersion" type="xs:decimal">
+						<xs:annotation>
+							<xs:documentation>This optional decimal value is used to indicate the instance document's schema version compatibility, which is not necessarily the version of the schema that updated the document.  VM Maestro uses this to enforce version specific changes.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="layout" default="Schematic">
+						<xs:annotation>
+							<xs:documentation>This specifies the topology's layout mode.  Schematic uses x/y locations, whereas Geographic uses lat/lon coordinates.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Schematic"/>
+								<xs:enumeration value="Geographic"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-
-	<xs:complexType name="connectionType">
+	
+	<xs:simpleType name="ipv4Type">
 		<xs:annotation>
 			<xs:documentation>
-				Connections define links (physical or not) between any model elements.
-				A connection's endpoints may be nodes, but may also be a model element within a node.
-				For instance, when connecting to a CRS1, it may terminate at a specific port within the platform complex.
-				For bi-direction connections, the target and source elements are interchangeable, but that is up to the actual model's interpretation.
+				The ipv4Type data type is an xs:string of decimal digits separated by '.' (period) characters.  It
+				represents the 32-bit dotted-decimal notation of IPv4 addresses.  Valid IPv4 addresses contain a series of four
+				one-byte long decimal numbers (0 - 255) separated by the '.' character (a total of three '.' characters
+				appear).  A valid value of the IPv4Address data type is "212.23.123.0".  See RFC 790 in Section 2.2.2 for
+				further details on IPv4 addresses.
 			</xs:documentation>
 		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="virl:extensible">
-				<xs:attribute name="src" use="required" type="xs:string"> </xs:attribute>
-				<xs:attribute name="dst" use="required" type="xs:string"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
-	<xs:complexType name="nodeType">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"
+			/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ipv6Type">
 		<xs:annotation>
-			<xs:documentation>Nodes represent all edge devices on a network, and are the basic building blocks of a topology.  A node may be as simple as an IP Phone, or as complex as a fully stacked CRS1.</xs:documentation>
+			<xs:documentation>
+				The ipv6Type data type is an xs:string of hexadecimal digits ('0'-'9' and 'A'-'F' or 'a'-'f')
+				separated by ':' (colon) characters.  It represents the 128-bit notation of IPv6 addresses.  Fully expanded
+				IPv6 addresses contain a series of eight two-byte long hexadecimal numbers separated by the ":" character (a
+				total of seven ':' characters appear).  A single two-byte long hexadecimal number contains up to four
+				hexadecimal digits.  All valid IPv6 addresses are supported in the MDL.  A valid value of the ipv6Type
+				data type is "2001:DB8:0000:0056:0000:ABCD:EF12:1234".  See RFC 2460 for further details on IPv6 addresses and
+				valid shorthand notations.
+			</xs:documentation>
 		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="virl:extensible">
-				<xs:attribute name="name" type="xs:string" use="required">
-					<xs:annotation>
-						<xs:documentation>Any string, rendered as its label in VM Maestro. It may include special characters (e.g. newline, accents, etc), but must be escape-sequenced.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-				<xs:attribute name="type" default="SIMPLE">
-					<xs:annotation>
-						<xs:documentation>This indicates the node's type, and determines which (if any) schema specific validation rules to enforce on it.</xs:documentation>
-					</xs:annotation>
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:enumeration value="SIMPLE"/>
-							<xs:enumeration value="DETAILED"/>
-							<xs:enumeration value="ASSET"/>
-							<xs:enumeration value="SEGMENT"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:attribute>
-				<xs:attribute name="location" type="xs:string">
-					<xs:annotation>
-						<xs:documentation>Specifies the node's x/y location on a canvas, in a comma-separated x,y string.</xs:documentation>
-					</xs:annotation>
-				</xs:attribute>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
+		<xs:restriction base="xs:string">
+			<xs:pattern value="((([0-9A-Fa-f]{1,4}:){7}(([0-9A-Fa-f]{1,4})|:))|(([0-9A-Fa-f]{1,4}:){6}(:|((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})|(:[0-9A-Fa-f]{1,4})))|(([0-9A-Fa-f]{1,4}:){5}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){4}(:[0-9A-Fa-f]{1,4}){0,1}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){3}(:[0-9A-Fa-f]{1,4}){0,2}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:){2}(:[0-9A-Fa-f]{1,4}){0,3}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(([0-9A-Fa-f]{1,4}:)(:[0-9A-Fa-f]{1,4}){0,4}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(:(:[0-9A-Fa-f]{1,4}){0,5}((:((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})?)|((:[0-9A-Fa-f]{1,4}){1,2})))|(((25[0-5]|2[0-4]\d|[01]?\d{1,2})(\.(25[0-5]|2[0-4]\d|[01]?\d{1,2})){3})))(%.+)?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:complexType name="extensible">
 		<xs:sequence>
 			<xs:element name="extensions" minOccurs="0">
