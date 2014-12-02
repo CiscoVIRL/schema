@@ -140,8 +140,8 @@
 								</xs:annotation>
 								<xs:complexContent>
 									<xs:extension base="virl:extensible">
-										<xs:attribute name="src" use="required" type="xs:string"> </xs:attribute>
-										<xs:attribute name="dst" use="required" type="xs:string"/>
+										<xs:attribute name="source" use="required" type="xs:string"> </xs:attribute>
+										<xs:attribute name="target" use="required" type="xs:string"/>
 									</xs:extension>
 								</xs:complexContent>
 							</xs:complexType>
