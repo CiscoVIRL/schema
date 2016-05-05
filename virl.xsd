@@ -482,15 +482,6 @@
 		<xs:annotation>
 			<xs:documentation>A text annotation.</xs:documentation>
 		</xs:annotation>
-<!-- 
-	@AnnotationProperty( value=PROP_STRING, defaultValue="", tooltip="The text" )
-	@Field private String string = "";
-	
-	@AnnotationProperty( value=PROP_STROKE, defaultValue="000000", validator=ColorValidator.class, tooltip="The text's color" )
-	@Field( converter=ColorAdapter.class ) private RGBColor stroke = DEFAULT_STROKE;
-	
-	@AnnotationProperty( value=PROP_STROKEOPACITY, defaultValue="1.0", validator=OpacityValidator.class, tooltip="The border opacity" )
-	@Field( converter=FloatConverter.class ) private Float strokeOpacity = DEFAULT_STROKEOPACITY;-->
 		<xs:attribute name="x" type="xs:integer" use="required">
 			<xs:annotation>
 				<xs:documentation>The left edge of the text.</xs:documentation>
@@ -501,7 +492,7 @@
 				<xs:documentation>The top edge of the text.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="width" type="xs:integer" use="required">
+		<!--xs:attribute name="width" type="xs:integer" use="required">
 			<xs:annotation>
 				<xs:documentation>The text's width.</xs:documentation>
 			</xs:annotation>
@@ -510,7 +501,7 @@
 			<xs:annotation>
 				<xs:documentation>The text's height.</xs:documentation>
 			</xs:annotation>
-		</xs:attribute>
+		</xs:attribute-->
 		<xs:attribute name="string" type="xs:string" use="required">
 			<xs:annotation>
 				<xs:documentation>The text.</xs:documentation>
