@@ -507,6 +507,16 @@
 				<xs:documentation>The text.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
+		<xs:attribute name="font" type="xs:string" default="SansSerif">
+			<xs:annotation>
+				<xs:documentation>The font.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="point-size" type="xs:integer" default="12">
+			<xs:annotation>
+				<xs:documentation>The font's point size.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 		<xs:attribute name="stroke" type="virl:colorInHex" default="000000">
 			<xs:annotation>
 				<xs:documentation>The font's color.</xs:documentation>
