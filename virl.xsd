@@ -309,6 +309,24 @@
 			<xs:enumeration value="DashDotDot"/>
 		</xs:restriction>
 	</xs:simpleType>
+	
+	<xs:simpleType name="font">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Arial"/>
+			<xs:enumeration value="Gadget"/>
+			<xs:enumeration value="Cursive"/>
+			<xs:enumeration value="Impact"/>
+			<xs:enumeration value="Lucida"/>			
+			<xs:enumeration value="Tahoma"/>
+			<xs:enumeration value="Helvetica"/>
+			<xs:enumeration value="Verdana"/>
+			<xs:enumeration value="Georgia"/>
+			<xs:enumeration value="Palatino"/>
+			<xs:enumeration value="Times"/>
+			<xs:enumeration value="Courier"/>
+			<xs:enumeration value="Monaco"/>
+		</xs:restriction>
+	</xs:simpleType>
 
 	<xs:complexType name="rectangleType">
 		<xs:annotation>
@@ -497,7 +515,7 @@
 				<xs:documentation>The text.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="font" type="xs:string" default="SansSerif">
+		<xs:attribute name="font" type="virl:font" default="Arial">
 			<xs:annotation>
 				<xs:documentation>The font.</xs:documentation>
 			</xs:annotation>
