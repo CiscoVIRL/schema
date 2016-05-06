@@ -344,24 +344,24 @@
 				<xs:documentation>The height of the rectangle.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="fill" type="virl:colorInHex" default="CCCCCC">
-			<xs:annotation>
-				<xs:documentation>The fill's color.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
 		<xs:attribute name="fill-opacity" type="xs:float" default="1.0">
 			<xs:annotation>
 				<xs:documentation>The fill's opacity.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke" type="virl:colorInHex" default="000000">
+		<xs:attribute name="fill" type="virl:colorInHex" default="CCCCCC">
 			<xs:annotation>
-				<xs:documentation>The border's color.</xs:documentation>
+				<xs:documentation>The fill's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-opacity" type="xs:float" default="1.0">
 			<xs:annotation>
 				<xs:documentation>The border's opacity.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="stroke" type="virl:colorInHex" default="000000">
+			<xs:annotation>
+				<xs:documentation>The border's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-width" type="xs:integer" default="3">
@@ -400,24 +400,24 @@
 				<xs:documentation>The vertical radius.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="fill" type="virl:colorInHex" default="CCCCCC">
-			<xs:annotation>
-				<xs:documentation>The fill's color.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
 		<xs:attribute name="fill-opacity" type="xs:float" default="1.0">
 			<xs:annotation>
 				<xs:documentation>The fill's opacity.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke" type="virl:colorInHex" default="000000">
+		<xs:attribute name="fill" type="virl:colorInHex" default="CCCCCC">
 			<xs:annotation>
-				<xs:documentation>The border's color.</xs:documentation>
+				<xs:documentation>The fill's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-opacity" type="xs:float" default="1.0">
 			<xs:annotation>
 				<xs:documentation>The border's opacity.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="stroke" type="virl:colorInHex" default="000000">
+			<xs:annotation>
+				<xs:documentation>The border's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-width" type="xs:integer" default="3">
@@ -456,14 +456,14 @@
 				<xs:documentation>The Y component of the end point.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke" type="virl:colorInHex" default="000000">
-			<xs:annotation>
-				<xs:documentation>The border's color.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
 		<xs:attribute name="stroke-opacity" type="xs:float" default="1.0">
 			<xs:annotation>
 				<xs:documentation>The border's opacity.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="stroke" type="virl:colorInHex" default="000000">
+			<xs:annotation>
+				<xs:documentation>The border's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-width" type="xs:integer" default="3">
@@ -492,16 +492,6 @@
 				<xs:documentation>The top edge of the text.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<!--xs:attribute name="width" type="xs:integer" use="required">
-			<xs:annotation>
-				<xs:documentation>The text's width.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="height" type="xs:integer" use="required">
-			<xs:annotation>
-				<xs:documentation>The text's height.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute-->
 		<xs:attribute name="string" type="xs:string" use="required">
 			<xs:annotation>
 				<xs:documentation>The text.</xs:documentation>
@@ -517,15 +507,15 @@
 				<xs:documentation>The font's point size.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke" type="virl:colorInHex" default="000000">
-			<xs:annotation>
-				<xs:documentation>The font's color.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
 		<xs:attribute name="stroke-opacity" type="xs:float" default="1.0">
 			<xs:annotation>
 				<xs:documentation>The font's opacity.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
+		<xs:attribute name="stroke" type="virl:colorInHex" default="000000">
+			<xs:annotation>
+				<xs:documentation>The font's color.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>		
 	</xs:complexType>
 </xs:schema>
