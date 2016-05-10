@@ -316,7 +316,7 @@
 			<xs:enumeration value="Gadget"/>
 			<xs:enumeration value="Cursive"/>
 			<xs:enumeration value="Impact"/>
-			<xs:enumeration value="Lucida"/>			
+			<xs:enumeration value="Lucida"/>
 			<xs:enumeration value="Tahoma"/>
 			<xs:enumeration value="Helvetica"/>
 			<xs:enumeration value="Verdana"/>
@@ -515,22 +515,22 @@
 				<xs:documentation>The text.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="font" type="virl:font" default="Arial">
+		<xs:attribute name="font-family" type="virl:font" default="Arial">
 			<xs:annotation>
 				<xs:documentation>The font.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="point-size" type="xs:integer" default="12">
+		<xs:attribute name="font-size" type="xs:integer" default="12">
 			<xs:annotation>
 				<xs:documentation>The font's point size.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke-opacity" type="xs:float" default="1.0">
+		<xs:attribute name="fill-opacity" type="xs:float" default="1.0">
 			<xs:annotation>
 				<xs:documentation>The font's opacity.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke" type="virl:colorInHex" default="000000">
+		<xs:attribute name="fill" type="virl:colorInHex" default="000000">
 			<xs:annotation>
 				<xs:documentation>The font's color.</xs:documentation>
 			</xs:annotation>
