@@ -290,7 +290,7 @@
 			<xs:pattern value="[0-9]+(\s[0-9]+)*"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="colorInHex">
 		<xs:annotation>
 			<xs:documentation>The color, using hexadecimal notation. It's the value of red&lt;&lt;16|green&lt;&lt;8|blue, left-padded to fill 6 hex chars.</xs:documentation>
@@ -299,7 +299,7 @@
 			<xs:pattern value="([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="strokePattern">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Solid"/>
@@ -309,7 +309,7 @@
 			<xs:enumeration value="DashDotDot"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="fontFamily">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Arial"/>
@@ -327,7 +327,7 @@
 			<xs:enumeration value="Monaco"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
+
 	<xs:simpleType name="textAnchor">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Start"/>
@@ -396,7 +396,7 @@
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	
+
 	<xs:complexType name="ellipseType">
 		<xs:annotation>
 			<xs:documentation>An ellipse annotation.</xs:documentation>
@@ -452,7 +452,7 @@
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	
+
 	<xs:complexType name="lineType">
 		<xs:annotation>
 			<xs:documentation>A line annotation.</xs:documentation>
@@ -498,7 +498,7 @@
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	
+
 	<xs:complexType name="textType">
 		<xs:annotation>
 			<xs:documentation>A text annotation.</xs:documentation>
@@ -511,11 +511,6 @@
 		<xs:attribute name="y" type="xs:integer" use="required">
 			<xs:annotation>
 				<xs:documentation>The top edge of the text.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="string" type="xs:string" use="required">
-			<xs:annotation>
-				<xs:documentation>The text.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="font-family" type="virl:fontFamily" default="Arial">
@@ -542,6 +537,6 @@
 			<xs:annotation>
 				<xs:documentation>The font's color.</xs:documentation>
 			</xs:annotation>
-		</xs:attribute>		
+		</xs:attribute>
 	</xs:complexType>
 </xs:schema>
