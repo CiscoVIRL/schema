@@ -503,41 +503,44 @@
 		<xs:annotation>
 			<xs:documentation>A text annotation.</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="x" type="xs:integer" use="required">
-			<xs:annotation>
-				<xs:documentation>The left edge of the text.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="y" type="xs:integer" use="required">
-			<xs:annotation>
-				<xs:documentation>The top edge of the text.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="font-family" type="virl:fontFamily" default="Arial">
-			<xs:annotation>
-				<xs:documentation>The font.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="font-size" type="xs:integer" default="12">
-			<xs:annotation>
-				<xs:documentation>The font's point size.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="text-anchor" type="virl:textAnchor" default="Start">
-			<xs:annotation>
-				<xs:documentation>The text's alignment.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="fill-opacity" type="xs:float" default="1.0">
-			<xs:annotation>
-				<xs:documentation>The font's opacity.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="fill" type="virl:colorInHex" default="000000">
-			<xs:annotation>
-				<xs:documentation>The font's color.</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<![CDATA[]]>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="x" type="xs:integer" use="required">
+					<xs:annotation>
+						<xs:documentation>The left edge of the text.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="y" type="xs:integer" use="required">
+					<xs:annotation>
+						<xs:documentation>The top edge of the text.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="font-family" type="virl:fontFamily" default="Arial">
+					<xs:annotation>
+						<xs:documentation>The font.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="font-size" type="xs:integer" default="12">
+					<xs:annotation>
+						<xs:documentation>The font's point size.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="text-anchor" type="virl:textAnchor" default="Start">
+					<xs:annotation>
+						<xs:documentation>The text's alignment.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="fill-opacity" type="xs:float" default="1.0">
+					<xs:annotation>
+						<xs:documentation>The font's opacity.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="fill" type="virl:colorInHex" default="000000">
+					<xs:annotation>
+						<xs:documentation>The font's color.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
 	</xs:complexType>
 </xs:schema>
