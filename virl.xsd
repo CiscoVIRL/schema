@@ -530,6 +530,26 @@
 						<xs:documentation>The text's alignment.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
+				<xs:attribute name="bold" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>Whether or not the text is bold.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="italic" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>Whether or not the text is italicized.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="underline" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>Whether or not the text is underlined.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="strikethrough" type="xs:boolean" default="false">
+					<xs:annotation>
+						<xs:documentation>Whether or not the text has a strikethrough.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 				<xs:attribute name="fill-opacity" type="xs:float" default="1.0">
 					<xs:annotation>
 						<xs:documentation>The font's opacity.</xs:documentation>
