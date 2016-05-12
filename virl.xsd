@@ -477,6 +477,16 @@
 				<xs:documentation>The Y component of the end point.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
+		<xs:attribute name="arrow-head-start" type="xs:boolean" default="false">
+			<xs:annotation>
+				<xs:documentation>Whether or not the line's start is an arrowhead.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="arrow-head-end" type="xs:boolean" default="false">
+			<xs:annotation>
+				<xs:documentation>Whether or not the line's end is an arrowhead.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 		<xs:attribute name="stroke-opacity" type="xs:float" default="1.0">
 			<xs:annotation>
 				<xs:documentation>The border's opacity.</xs:documentation>
