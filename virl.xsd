@@ -312,19 +312,9 @@
 
 	<xs:simpleType name="fontFamily">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Arial"/>
-			<xs:enumeration value="Gadget"/>
-			<xs:enumeration value="Cursive"/>
-			<xs:enumeration value="Impact"/>
-			<xs:enumeration value="Lucida"/>
-			<xs:enumeration value="Tahoma"/>
-			<xs:enumeration value="Helvetica"/>
-			<xs:enumeration value="Verdana"/>
-			<xs:enumeration value="Georgia"/>
-			<xs:enumeration value="Palatino"/>
-			<xs:enumeration value="Times"/>
-			<xs:enumeration value="Courier"/>
-			<xs:enumeration value="Monaco"/>
+			<xs:enumeration value="SansSerif"/>
+			<xs:enumeration value="Serif"/>
+			<xs:enumeration value="Monospace"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -333,6 +323,13 @@
 			<xs:enumeration value="Start"/>
 			<xs:enumeration value="Middle"/>
 			<xs:enumeration value="End"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="arrowType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="None"/>
+			<xs:enumeration value="OpenArrow"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -477,14 +474,14 @@
 				<xs:documentation>The Y component of the end point.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="arrow-head-start" type="xs:boolean" default="false">
+		<xs:attribute name="marker-start" type="virl:arrowType" default="None">
 			<xs:annotation>
-				<xs:documentation>Whether or not the line's start is an arrowhead.</xs:documentation>
+				<xs:documentation>The line's start arrow type.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="arrow-head-end" type="xs:boolean" default="false">
+		<xs:attribute name="marker-end" type="virl:arrowType" default="None">
 			<xs:annotation>
-				<xs:documentation>Whether or not the line's end is an arrowhead.</xs:documentation>
+				<xs:documentation>The line's end arrow type.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-opacity" type="xs:float" default="1.0">
@@ -525,7 +522,7 @@
 						<xs:documentation>The top edge of the text.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-				<xs:attribute name="font-family" type="virl:fontFamily" default="Arial">
+				<xs:attribute name="font-family" type="virl:fontFamily" default="SansSerif">
 					<xs:annotation>
 						<xs:documentation>The font.</xs:documentation>
 					</xs:annotation>
