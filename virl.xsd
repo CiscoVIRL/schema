@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://www.cisco.com/VIRL" version="1.0"
+<xs:schema targetNamespace="http://www.cisco.com/VIRL" version="0.95"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
 	xmlns:virl="http://www.cisco.com/VIRL">
 
 	<xs:annotation>
 		<xs:documentation>
-			Topology schema for VIRL, v1.0
+			Topology schema for VIRL, v0.95
 			(C) Copyright 2012-2016 Cisco Systems Inc.  All rights reserved.
 		</xs:documentation>
 	</xs:annotation>
@@ -302,34 +302,34 @@
 
 	<xs:simpleType name="strokePattern">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Solid"/>
-			<xs:enumeration value="Dot"/>
-			<xs:enumeration value="Dash"/>
-			<xs:enumeration value="DashDot"/>
-			<xs:enumeration value="DashDotDot"/>
+			<xs:enumeration value="solid"/>
+			<xs:enumeration value="dot"/>
+			<xs:enumeration value="dash"/>
+			<xs:enumeration value="dash-dot"/>
+			<xs:enumeration value="dash-dot-dot"/>
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="fontFamily">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="SansSerif"/>
-			<xs:enumeration value="Serif"/>
-			<xs:enumeration value="Monospace"/>
+			<xs:enumeration value="sans-serif"/>
+			<xs:enumeration value="serif"/>
+			<xs:enumeration value="monospace"/>
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="textAnchor">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Start"/>
-			<xs:enumeration value="Middle"/>
-			<xs:enumeration value="End"/>
+			<xs:enumeration value="start"/>
+			<xs:enumeration value="middle"/>
+			<xs:enumeration value="end"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
 	<xs:simpleType name="arrowType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="None"/>
-			<xs:enumeration value="OpenArrow"/>
+			<xs:enumeration value="none"/>
+			<xs:enumeration value="open-arrow"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -387,7 +387,7 @@
 				<xs:documentation>The border's width.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke-pattern" type="virl:strokePattern" default="Solid">
+		<xs:attribute name="stroke-pattern" type="virl:strokePattern" default="solid">
 			<xs:annotation>
 				<xs:documentation>The border's pattern.</xs:documentation>
 			</xs:annotation>
@@ -443,7 +443,7 @@
 				<xs:documentation>The border's width.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke-pattern" type="virl:strokePattern" default="Solid">
+		<xs:attribute name="stroke-pattern" type="virl:strokePattern" default="solid">
 			<xs:annotation>
 				<xs:documentation>The border's pattern.</xs:documentation>
 			</xs:annotation>
@@ -474,12 +474,12 @@
 				<xs:documentation>The Y component of the end point.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="marker-start" type="virl:arrowType" default="None">
+		<xs:attribute name="marker-start" type="virl:arrowType" default="none">
 			<xs:annotation>
 				<xs:documentation>The line's start arrow type.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="marker-end" type="virl:arrowType" default="None">
+		<xs:attribute name="marker-end" type="virl:arrowType" default="none">
 			<xs:annotation>
 				<xs:documentation>The line's end arrow type.</xs:documentation>
 			</xs:annotation>
@@ -499,7 +499,7 @@
 				<xs:documentation>The border's width.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke-pattern" type="virl:strokePattern" default="Solid">
+		<xs:attribute name="stroke-pattern" type="virl:strokePattern" default="solid">
 			<xs:annotation>
 				<xs:documentation>The border's pattern.</xs:documentation>
 			</xs:annotation>
@@ -522,7 +522,7 @@
 						<xs:documentation>The top edge of the text.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-				<xs:attribute name="font-family" type="virl:fontFamily" default="SansSerif">
+				<xs:attribute name="font-family" type="virl:fontFamily" default="sans-serif">
 					<xs:annotation>
 						<xs:documentation>The font.</xs:documentation>
 					</xs:annotation>
@@ -532,7 +532,7 @@
 						<xs:documentation>The font's point size.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-				<xs:attribute name="text-anchor" type="virl:textAnchor" default="Start">
+				<xs:attribute name="text-anchor" type="virl:textAnchor" default="start">
 					<xs:annotation>
 						<xs:documentation>The text's alignment.</xs:documentation>
 					</xs:annotation>
