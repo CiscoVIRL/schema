@@ -369,7 +369,7 @@
 				<xs:documentation>The fill's opacity.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="fill" type="virl:colorInHex" default="CCCCCC">
+		<xs:attribute name="fill" type="virl:colorInHex" default="000000">
 			<xs:annotation>
 				<xs:documentation>The fill's color.</xs:documentation>
 			</xs:annotation>
@@ -384,7 +384,7 @@
 				<xs:documentation>The border's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke-width" type="xs:integer" default="3">
+		<xs:attribute name="stroke-width" type="xs:integer" default="1">
 			<xs:annotation>
 				<xs:documentation>The border's width.</xs:documentation>
 			</xs:annotation>
@@ -425,7 +425,7 @@
 				<xs:documentation>The fill's opacity.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="fill" type="virl:colorInHex" default="CCCCCC">
+		<xs:attribute name="fill" type="virl:colorInHex" default="000000">
 			<xs:annotation>
 				<xs:documentation>The fill's color.</xs:documentation>
 			</xs:annotation>
@@ -440,7 +440,7 @@
 				<xs:documentation>The border's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke-width" type="xs:integer" default="3">
+		<xs:attribute name="stroke-width" type="xs:integer" default="1">
 			<xs:annotation>
 				<xs:documentation>The border's width.</xs:documentation>
 			</xs:annotation>
@@ -496,7 +496,7 @@
 				<xs:documentation>The border's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke-width" type="xs:integer" default="3">
+		<xs:attribute name="stroke-width" type="xs:integer" default="1">
 			<xs:annotation>
 				<xs:documentation>The border's width.</xs:documentation>
 			</xs:annotation>
