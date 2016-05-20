@@ -352,6 +352,7 @@
 		<xs:attribute name="radius" type="xs:integer" default="0">
 			<xs:annotation>
 				<xs:documentation>The radius of the rectangle's rounded edges.</xs:documentation>
+				<xs:documentation>The initial value shall be 10.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="width" type="xs:integer" use="required">
@@ -372,6 +373,7 @@
 		<xs:attribute name="fill" type="virl:colorInHex" default="000000">
 			<xs:annotation>
 				<xs:documentation>The fill's color.</xs:documentation>
+				<xs:documentation>The initial value shall be CCCCCC.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-opacity" type="xs:float" default="1.0">
@@ -387,6 +389,7 @@
 		<xs:attribute name="stroke-width" type="xs:integer" default="1">
 			<xs:annotation>
 				<xs:documentation>The border's width.</xs:documentation>
+				<xs:documentation>The initial value shall be 3.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-pattern" type="virl:strokePattern" default="solid">
@@ -428,6 +431,7 @@
 		<xs:attribute name="fill" type="virl:colorInHex" default="000000">
 			<xs:annotation>
 				<xs:documentation>The fill's color.</xs:documentation>
+				<xs:documentation>The initial value shall be CCCCCC.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-opacity" type="xs:float" default="1.0">
@@ -443,6 +447,7 @@
 		<xs:attribute name="stroke-width" type="xs:integer" default="1">
 			<xs:annotation>
 				<xs:documentation>The border's width.</xs:documentation>
+				<xs:documentation>The initial value shall be 3.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-pattern" type="virl:strokePattern" default="solid">
@@ -499,6 +504,7 @@
 		<xs:attribute name="stroke-width" type="xs:integer" default="1">
 			<xs:annotation>
 				<xs:documentation>The border's width.</xs:documentation>
+				<xs:documentation>The initial value shall be 3.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="stroke-pattern" type="virl:strokePattern" default="solid">
