@@ -19,7 +19,7 @@
 							<xs:element name="group" type="virl:groupType"/>
 							<xs:element name="node" type="virl:nodeType"/>
 						</xs:choice>
-						<xs:element name="annotations">
+						<xs:element name="annotations" minOccurs="0">
 							<xs:complexType>
 								<xs:choice maxOccurs="unbounded" minOccurs="0">
 									<xs:element name="rect" type="virl:rectangleType"/>
