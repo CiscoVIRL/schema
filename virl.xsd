@@ -353,18 +353,18 @@
 				<xs:documentation>The rectangle's top edge.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="radius" type="xs:integer" default="0">
+		<xs:attribute name="radius" type="xs:nonNegativeInteger" default="0">
 			<xs:annotation>
 				<xs:documentation>The radius of the rectangle's rounded edges.</xs:documentation>
 				<xs:documentation>The initial value shall be 10.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="width" type="xs:integer" use="required">
+		<xs:attribute name="width" type="xs:nonNegativeInteger" use="required">
 			<xs:annotation>
 				<xs:documentation>The rectangle's width.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="height" type="xs:integer" use="required">
+		<xs:attribute name="height" type="xs:nonNegativeInteger" use="required">
 			<xs:annotation>
 				<xs:documentation>The rectangle's height.</xs:documentation>
 			</xs:annotation>
@@ -390,7 +390,7 @@
 				<xs:documentation>The border's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke-width" type="xs:integer" default="1">
+		<xs:attribute name="stroke-width" type="xs:positiveInteger" default="1">
 			<xs:annotation>
 				<xs:documentation>The border's width.</xs:documentation>
 				<xs:documentation>The initial value shall be 3.</xs:documentation>
@@ -417,12 +417,12 @@
 				<xs:documentation>The ellipse's top edge.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="width" type="xs:integer" use="required">
+		<xs:attribute name="width" type="xs:nonNegativeInteger" use="required">
 			<xs:annotation>
 				<xs:documentation>The ellipse's width.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="height" type="xs:integer" use="required">
+		<xs:attribute name="height" type="xs:nonNegativeInteger" use="required">
 			<xs:annotation>
 				<xs:documentation>The ellipse's height.</xs:documentation>
 			</xs:annotation>
@@ -448,7 +448,7 @@
 				<xs:documentation>The border's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke-width" type="xs:integer" default="1">
+		<xs:attribute name="stroke-width" type="xs:positiveInteger" default="1">
 			<xs:annotation>
 				<xs:documentation>The border's width.</xs:documentation>
 				<xs:documentation>The initial value shall be 3.</xs:documentation>
@@ -505,7 +505,7 @@
 				<xs:documentation>The border's color.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="stroke-width" type="xs:integer" default="1">
+		<xs:attribute name="stroke-width" type="xs:positiveInteger" default="1">
 			<xs:annotation>
 				<xs:documentation>The border's width.</xs:documentation>
 				<xs:documentation>The initial value shall be 3.</xs:documentation>
@@ -539,7 +539,7 @@
 						<xs:documentation>The font.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-				<xs:attribute name="font-size" type="xs:integer" default="12">
+				<xs:attribute name="font-size" type="xs:positiveInteger" default="12">
 					<xs:annotation>
 						<xs:documentation>The font's point size.</xs:documentation>
 					</xs:annotation>
