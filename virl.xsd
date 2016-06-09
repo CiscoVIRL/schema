@@ -124,6 +124,7 @@
 							<xs:enumeration value="SIMPLE"/>
 							<xs:enumeration value="DETAILED"/>
 							<xs:enumeration value="ASSET"/>
+							<xs:enumeration value="SEGMENT"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
