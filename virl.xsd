@@ -25,7 +25,7 @@
 									<xs:element name="rect" type="virl:rectangleType"/>
 									<xs:element name="ellipse" type="virl:ellipseType"/>
 									<xs:element name="line" type="virl:lineType"/>
-									<xs:element name="text" type="virl:textType"> </xs:element>
+									<xs:element name="text" type="virl:textType"/>
 								</xs:choice>
 							</xs:complexType>
 						</xs:element>
@@ -124,7 +124,11 @@
 							<xs:enumeration value="SIMPLE"/>
 							<xs:enumeration value="DETAILED"/>
 							<xs:enumeration value="ASSET"/>
-							<xs:enumeration value="SEGMENT"/>
+							<xs:enumeration value="SEGMENT">
+								<xs:annotation>
+									<xs:documentation>WARNING: Segments have been deprecated. It is only here for backward compatibility.</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
