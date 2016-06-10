@@ -118,17 +118,14 @@
 				<xs:attribute name="type" default="SIMPLE">
 					<xs:annotation>
 						<xs:documentation>This indicates the node's type, and determines which (if any) schema specific validation rules to enforce on it.</xs:documentation>
+						<xs:documentation>WARNING: The SEGMENT type has been deprecated. It is only present for backward compatibility.</xs:documentation>						
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:enumeration value="SIMPLE"/>
 							<xs:enumeration value="DETAILED"/>
 							<xs:enumeration value="ASSET"/>
-							<xs:enumeration value="SEGMENT">
-								<xs:annotation>
-									<xs:documentation>WARNING: Segments have been deprecated. It is only here for backward compatibility.</xs:documentation>
-								</xs:annotation>
-							</xs:enumeration>
+							<xs:enumeration value="SEGMENT"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
