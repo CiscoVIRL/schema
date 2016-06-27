@@ -12,9 +12,8 @@
 
 	<xs:element name="topology">
 		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="virl:extensible">
 					<xs:sequence>
+						<xs:group ref="virl:extensionGroup"/>
 						<xs:choice maxOccurs="unbounded" minOccurs="0">
 							<xs:element name="group" type="virl:groupType"/>
 							<xs:element name="node" type="virl:nodeType"/>
@@ -52,8 +51,6 @@
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:attribute>
-				</xs:extension>
-			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
 
@@ -66,8 +63,10 @@
 				For bi-direction connections, the target and source elements are interchangeable, but that is up to the actual model's interpretation.
 			</xs:documentation>
 		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="virl:extensible">
+				<xs:sequence>
+					<xs:group ref="virl:tagGroup"/>
+					<xs:group ref="virl:extensionGroup"/>
+				</xs:sequence>
 				<xs:attribute name="src" use="required" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>
@@ -77,36 +76,33 @@
 					</xs:annotation>
 				</xs:attribute>
 				<xs:attribute name="dst" use="required" type="xs:string"/>
-			</xs:extension>
-		</xs:complexContent>
 	</xs:complexType>
 
 	<xs:complexType name="groupType">
 		<xs:annotation>
 			<xs:documentation>A group may contain any number of sub-groups and/or nodes, allowing us unlimited depth nesting.  This effectively allows us to define arbitrarily huge topologies while allowing the UI to remain performant and intuitive.</xs:documentation>
 		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="virl:extensible">
+				<xs:sequence>
+					<xs:group ref="virl:extensionGroup"/>
 				<xs:choice maxOccurs="unbounded" minOccurs="0">
 					<xs:element name="group" type="virl:groupType"/>
 					<xs:element name="node" type="virl:nodeType"/>
 				</xs:choice>
+				</xs:sequence>
 				<xs:attribute name="name" type="xs:string">
 					<xs:annotation>
 						<xs:documentation>Any string, rendered as its label in VM Maestro. It may include special characters (e.g. newline, accents, etc), but must be escape-sequenced.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-			</xs:extension>
-		</xs:complexContent>
 	</xs:complexType>
 
 	<xs:complexType name="nodeType">
 		<xs:annotation>
 			<xs:documentation>Nodes represent all edge devices on a network, and are the basic building blocks of a topology.  A node may be as simple as an IP Phone, or as complex as a fully stacked CRS1.</xs:documentation>
 		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="virl:extensible">
 				<xs:sequence>
+					<xs:group ref="virl:tagGroup"/>
+					<xs:group ref="virl:extensionGroup"/>
 					<xs:element name="interface" type="virl:interfaceType" minOccurs="0"
 						maxOccurs="unbounded"/>
 				</xs:sequence>
@@ -165,16 +161,16 @@
 						<xs:documentation>This optional attribute indicates whether or not this node is to be skipped during the simulation launch.  By default, all nodes in a topology are launched.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
-			</xs:extension>
-		</xs:complexContent>
 	</xs:complexType>
 
 	<xs:complexType name="interfaceType">
 		<xs:annotation>
 			<xs:documentation>Nodes of type ROUTER may declare interfaces.  Nodes of type VXR expose their interfaces by declaring ports within the VXR platform complex instead.</xs:documentation>
 		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="virl:extensible">
+		<xs:sequence>
+					<xs:group ref="virl:tagGroup"/>
+					<xs:group ref="virl:extensionGroup"/>
+		</xs:sequence>
 				<xs:attribute name="id" type="virl:arrayOfInteger"/>
 				<xs:attribute name="name" type="xs:string">
 					<xs:annotation>
@@ -213,11 +209,34 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
-			</xs:extension>
-		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:complexType name="extensible">
+	<xs:group name="tagGroup">
+		<xs:sequence>
+			<xs:element name="tags" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Container element for the list of tags.  Tags are simple labels that can be associated with most elements in the document.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="tag" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Element that contains one tag. The tag is the character content of this element, and that tag is associated with the grand-parent of this element (i.e., the parent of the tags element).</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="64"/>
+									<xs:pattern value="[0-9a-zA-Z_]*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>	
+	</xs:group>
+
+	<xs:group name="extensionGroup">
 		<xs:sequence>
 			<xs:element name="extensions" minOccurs="0">
 				<xs:annotation>
@@ -246,8 +265,8 @@
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
-	</xs:complexType>
-
+	</xs:group>
+	
 	<xs:simpleType name="ipv4Type">
 		<xs:annotation>
 			<xs:documentation>
